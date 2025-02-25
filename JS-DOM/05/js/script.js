@@ -1,15 +1,3 @@
-let x = document.querySelectorAll('.the-li');
-for(const y of x){
-    console.log(y.innerHTML);
-}
-
-
-let z = document.querySelectorAll('.the-ul');
-console.log(z[0].innerHTML);
-
-// htmlCollection vs htmlNodeList ???
-
-
 /* Need to learn - Tesk
 
 document.getElementById('');
@@ -20,3 +8,15 @@ document.querySelectorAll('');
 innerHTML
 innerText
 */
+
+
+document.getElementById('title').style.color = 'red';
+document.getElementById('title').style.textTransform = 'uppercase';
+document.getElementById('title').style.textAlign = 'center';
+document.getElementById('title').style.border = '1px solid red';
+
+let x = document.getElementById('title');
+    x.style.padding = '30px';
+    x.style.borderRadius = '5px';
+    x.style.maxWidth = '600px';
+    x.style.margin = 'auto';
