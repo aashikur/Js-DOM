@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>JS-Dom - ReCap</title>
+</head>
+
+<body id="main">
+
+    <h1>Js DOM Event</h1>
+    <section class="wrapper">
+        <button onclick="alert('click')">Alert Inline</button>
+        <button onclick="document.body.style.background = 'yellow'">BG Yellow</button>
+        <button onclick="document.body.style.background='initial'">Bg Normal</button>
+        <button onclick="textChange(this)">Change?</button>
+        <button onclick="textchange2(this)">Click Me</button>
+        <button onclick="ToggleClass(this)">Toggle</button>
+        <button>Decoration</button>
+        <button>Decoration</button>
+    </section>
+
+
+    <script>
+        function textChange(btn){
+            btn.style.padding = '10px 20px';
+            btn.style.transition = "all 0.3s ease";
+            btn.innerHTML = 'Y-Changed!';
+        }
+
+
+        function textchange2(btn){
+            btn.innerHTML = 'Clicked';
+            btn.style.color = 'white';
+            btn.style.background = '#222';
+        }
+
+
+        function ToggleClass(btn){
+            // (btn.innerHTML == 'Toggle') ? btn.innerHTML  = 'Toggled' : btn.innerHTML = 'Toggle';
+            (btn.innerHTML == 'Toggle') ? f1() :f2();
+            function f1(){
+                btn.innerHTML  = 'Toggled' 
+                btn.style.background = '#ddd';
+                btn.style.color = '#55f';
+                btn.style.border ='1px solid #55f'
+            }
+            function f2(){
+                btn.innerHTML = 'Toggle'
+                btn.style.background = 'linear-gradient(to right, orange, red)';
+                btn.style.color = 'white';
+                btn.style.border ='1px solid #55f'
+            }
+
+        }
+    </script>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
