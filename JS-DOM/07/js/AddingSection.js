@@ -25,8 +25,28 @@ let li4 = document.createElement('li');
 // 3. Adding element
 body2.appendChild(section1).appendChild(h2).innerHTML = "JavaScript Added New Section";
 
-let x = body2.appendChild(section1).appendChild(ul);
-    x.appendChild(li1).innerHTML = "First Append li"
-    x.appendChild(li2).innerHTML = "Second Append li"
-    x.appendChild(li3).innerHTML = "Three Append li"
-    x.appendChild(li4).innerHTML = "Four Append li"
+    body2.appendChild(section1).appendChild(ul);
+    ul.appendChild(li1).innerHTML = "First Append li"
+    ul.appendChild(li2).innerHTML = "Second Append li"
+    ul.appendChild(li3).innerHTML = "Three Append li"
+    ul.appendChild(li4).innerHTML = "Four Append li"
+
+
+
+// ShortCut by caret cote `` 
+
+    div = document.createElement('div');
+    section1.appendChild(div);
+
+    div.innerHTML = 
+    `
+        <hr>
+
+        <h1> This is ShortCut Method by single <i><u>caret Qode</u></i></h1>
+        <ul> 
+            <li> ShortCut </li>
+            <li> ShortCut </li>
+            <li> ShortCut </li>
+            <li> ShortCut </li>
+        </ul>
+    `;
