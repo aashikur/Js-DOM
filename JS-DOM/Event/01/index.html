@@ -18,7 +18,7 @@
         <button onclick="textChange(this)">Change?</button>
         <button onclick="textchange2(this)">Click Me</button>
         <button onclick="ToggleClass(this)">Toggle</button>
-        <button>Decoration</button>
+        <button id="btn">Tested</button>
         <button>Decoration</button>
     </section>
 
@@ -55,6 +55,13 @@
             }
 
         }
+
+
+        const btn = document.getElementById('btn');
+        // addEventListener('click',function(){})
+              btn.addEventListener('click',function(){
+                alert("Clicked");
+              });
     </script>
 
 
