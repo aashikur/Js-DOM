@@ -1,0 +1,18 @@
+.hover-effect {
+    transition: all .3s ease-out;
+}
+
+.hover-effect:hover {
+    background-color: aqua !important;
+    transform: scale(1.01);
+}
+
+.hover-effect:hover ~ .hover-effect:not(:hover) {
+    background: gray !important;
+    transform: scale(0.9) !important;
+}
+
+.text-color h1 {
+    color:white !important;
+    border-color: white  !important;
+}
