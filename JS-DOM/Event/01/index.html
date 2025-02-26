@@ -19,10 +19,10 @@
         <button onclick="textchange2(this)">Click Me</button>
         <button onclick="ToggleClass(this)">Toggle</button>
         <button id="btn">Tested</button>
-        <button>Decoration</button>
+        <button id="extra">Extrnal function After 3s</button>
     </section>
 
-
+    <!-- Mouse Event, Keyboard Event , Form Event , Windows Event  -->
     <script>
         function textChange(btn){
             btn.style.padding = '10px 20px';
@@ -62,7 +62,33 @@
               btn.addEventListener('click',function(){
                 alert("Clicked");
               });
+
+
+
+
+
+
+        function ExtrnalFunction(){
+            alert("Extra Function, after 3s");
+        }
+        const extra = document.getElementById('extra');
+       
+       setTimeout(() =>  {extra.addEventListener('click',ExtrnalFunction);},3000)
+
     </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <script src="js/script.js"></script>
