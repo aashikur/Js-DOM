@@ -47,20 +47,25 @@
 <!-- DOM PLAY  -->
 <script>
     document.getElementById('submit').addEventListener('click',function(){
-        event.preventDefault()
+        event.preventDefault();
+
         const textField = document.getElementById('textField').value;
-        
-        const commentBox = document.getElementById('commentBox');
-        const p = document.createElement('p');
-              p.classList.add('comment');
-              p.innerText = textField;
-        
+              textField.trim();
 
-        // Adding New Created Element to the #CommentBox
-        commentBox.appendChild(p);
+        if(textField.trim() != '' ){
+            const commentBox = document.getElementById('commentBox');
+            const p = document.createElement('p');
+                  p.classList.add('comment');
+                  p.innerText = textField;
+                
 
-        //Clearing Text Area
-        document.getElementById('textField').value = '';
+            // Adding New Created Element to the #CommentBox
+            commentBox.appendChild(p);
+
+            //Clearing Text Area
+            document.getElementById('textField').value = '';
+        }
+
 
 });
 </script>
