@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>JS-Dom - ReCap</title>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+<body id="main">
+
+
+
+
+
+
+<!-- My Awesome Comment BOX  -->
+<h1>Even Listener's</h1>
+
+
+<form>
+    <input id="textField" placeholder="type='delete'"></input>
+    <button id="submit" disabled>Delete</button>
+    <p id="sms"></p>
+</form>
+
+
+<script>
+    // AddEventListener Methods
+
+    const x = document.getElementById('textField');
+
+          x.addEventListener('keyup',function(){
+         const btn =   document.getElementById('submit');
+        
+         if(x.value == 'delete'){
+            
+            btn.removeAttribute('disabled');
+            
+         } else {
+            event.preventDefault();
+            btn.setAttribute('disabled',true)
+            
+         }
+    })
+
+
+    // SMS 
+    document.getElementById('submit').addEventListener('click',function(){
+        event.preventDefault();
+        document.getElementById('sms').innerHTML = 'Content Deleted!';
+        x.value = '';
+        setTimeout(function(){
+            document.getElementById('sms').innerHTML = '';
+        },3000)
+    })
+
+</script>
+
+</body>
+</html>
