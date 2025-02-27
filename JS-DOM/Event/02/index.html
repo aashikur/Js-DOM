@@ -63,6 +63,9 @@
                       
                 const userInput = document.getElementById('userInput').value;
                 
+                if(userInput == '') 
+                userName.innerHTML += '';
+                else 
                 userName.innerHTML = "<b>Welcome </b>"+ userInput;
             
             })
