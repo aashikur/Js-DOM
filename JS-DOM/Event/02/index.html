@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>JS-Dom - ReCap</title>
+</head>
+
+<body id="main">
+
+
+    <h2 id="title-text">Welcome to vTech</h2>
+    <button id="btn">login</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    <!-- Let's play with DOM  -->
+    
+    <section class="login">
+        <p id="userName">No User</p>
+        <input type="text" name="" id="userInput"> 
+        <button type="submit"      id="userSubmit">login</button>    
+    </section>
+
+
+    <script>
+
+
+        document.getElementById('userSubmit')
+            .addEventListener('click',function(){
+                const userName = document.getElementById('userName');
+                      
+                const userInput = document.getElementById('userInput').value;
+                
+                userName.innerHTML = "<b>Welcome </b>"+ userInput;
+            
+            })
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
