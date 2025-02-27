@@ -1,0 +1,42 @@
+body{
+    max-width: 80%;
+    margin: auto;
+    background-color: #222;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#commentBox{
+    padding: 20px 10px;
+    margin: 30px 0;
+    border: 1px solid #333;
+    border-radius: 10px;
+}
+
+.comment{
+    background-color: rgba(14, 13, 13, 0.408);
+    padding: 15px 20px;
+    border: 1px solid #202020;
+    border-radius: 10px;
+    color: rgb(168, 168, 168);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+form textarea{
+    padding: 20px;
+}
+
+form button {
+    padding: 10px;
+    max-width: 200px;
+    cursor: pointer;
+    background-color: rgb(111, 84, 246);
+    border: 1px solid #5c5c5c92;
+    border-radius: 5px;
+    color: #f0f0f0;
+    
+}

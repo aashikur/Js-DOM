@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>JS-Dom - ReCap</title>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+<body id="main">
+
+
+
+
+
+
+<!-- My Awesome Comment BOX  -->
+<h1>My Comment BOX</h1>
+<p><b>All Comment is here...</b></p>
+
+ <div id="commentBox">
+    <p class="comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis nostrum quam saepe perspiciatis delectus nobis eligendi, at quas architecto doloribus quis sit enim, dolore voluptate! Sint ea cum assumenda alias?</p>
+    <p class="comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis nostrum quam saepe perspiciatis delectus nobis eligendi, at quas architecto doloribus quis sit enim, dolore voluptate! Sint ea cum assumenda alias?</p>
+    <p class="comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis nostrum quam saepe perspiciatis delectus nobis eligendi, at quas architecto doloribus quis sit enim, dolore voluptate! Sint ea cum assumenda alias?</p>
+    <p class="comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis nostrum quam saepe perspiciatis delectus nobis eligendi, at quas architecto doloribus quis sit enim, dolore voluptate! Sint ea cum assumenda alias?</p>
+</div>
+
+
+
+<form>
+    <textarea id="textField" cols="60" rows="5"></textarea>
+    <button id="submit">Post Comment</button>
+</form>
+
+
+<!-- DOM PLAY  -->
+<script>
+    document.getElementById('submit').addEventListener('click',function(){
+        event.preventDefault()
+        const textField = document.getElementById('textField').value;
+        
+        const commentBox = document.getElementById('commentBox');
+        const p = document.createElement('p');
+              p.classList.add('comment');
+              p.innerText = textField;
+        
+
+        // Adding New Created Element to the #CommentBox
+        commentBox.appendChild(p);
+
+        //Clearing Text Area
+        document.getElementById('textField').value = '';
+
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
