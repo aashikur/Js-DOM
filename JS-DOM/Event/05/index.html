@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>JS-Dom - ReCap</title>
+</head>
+<body id="main">
+
+    <!-- content  -->
+    <h1>Explore Event Bubble</h1>
+    <section id="content-section">
+        <h3>List Of Things</h3>
+        <ol id="item-container">
+            <li id="item-1">item-1</li>
+            <li id="item-2">Item-2 -> TEST ME ?</li>
+            <li id="item-3">item-3</li>
+            <li id="item-4">item-4</li>
+        </ol>
+    </section>
+
+    <!-- Script  -->
+    <script>
+        // click item 1
+        document.getElementById('item-1')
+        .addEventListener('click',function(){
+            console.log('Clicked -> item-1 !');
+            // event.stopPropagation();
+            event.stopImmediatePropagation();
+        })
+
+        // click item 1
+        document.getElementById('item-2')
+        .addEventListener('click',function(){
+            console.log('Clicked -> item-2 !');
+            // event.stopPropagation();
+        })
+
+        // click item 3
+        document.getElementById('item-3')
+        .addEventListener('click',function(){
+            console.log('Clicked -> item-3 !');
+            event.stopPropagation();
+        })
+
+        // click item 4
+        document.getElementById('item-4')
+        .addEventListener('click',function(){
+            console.log('Clicked -> item-4 !');
+            event.stopPropagation();
+        })
+
+// ----------------------------------------------------
+        // click item Container
+             document.getElementById('item-container')
+        .addEventListener('click',function(){
+            console.log('Clicked -> Item Container!')
+            event.stopPropagation();
+
+        })
+
+        // click Section
+              document.getElementById('content-section')
+        .addEventListener('click',function(){
+            console.log('Clicked -> Content Section!')
+            event.stopPropagation();
+
+        })
+
+
+        // click Body
+              document.getElementById('main')
+        .addEventListener('click',function(){
+            console.log('Clicked -> Main Body!')
+            event.stopPropagation();
+
+        })
+
+
+        
+
+        
+    </script>
+</body>
+</html>
