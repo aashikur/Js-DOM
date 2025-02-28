@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>JS-Dom - ReCap</title>
+</head>
+<body id="main">
+
+    <!-- content  -->
+    <h1>Explore Event Bubble ~ Event Delegate js</h1>
+    <section id="content-section">
+        <h3>List Of Things</h3>
+        <ol id="item-container">
+            <li class="item item-1">Shop - 1</li>
+            <li class="item item-2">Shop - 2 </li>
+            <li class="item item-3">Shop - 3</li>
+            <li class="item item-4">Shop - 4</li>
+            <li class="item item-5">Shop - 5</li>
+            <li class="item item-6">Shop - 6</li>
+        </ol>
+        <button id="addItem">Add Item</button>
+    </section>
+
+    <!-- Script  -->
+    <script>
+/*  
+    const item = document.getElementsByClassName('item');
+    for(const num of item){
+        num.addEventListener('click',function(event){
+            // console.log(event.target.parentNode);
+
+            // Remove An item - Trick
+            event.target.parentNode.removeChild(this);
+        })
+    } 
+*/  
+
+    // New Good Ways - Catch direct Parent Node
+    document.getElementById('item-container')
+    .addEventListener('click',function(event){
+       // event.target.parentNode.removeChild(event.target);
+       // Error ~ Direct using This Will Remove 'ol' element 
+
+       // Revise Version
+       if(event.target.classList.contains('item')){
+            event.target.parentNode.removeChild(event.target);
+       }
+    })
+    
+
+
+    // Add An item --------------------------------------
+    document.getElementById('addItem')
+    .addEventListener('click',function(event){
+
+        let random = (new Date().getMilliseconds() * 49) % 100;
+        random = random < 10 ? random + 11 : random;
+
+        const ol = document.getElementById('item-container');
+        const li = document.createElement('li');
+              li.classList.add('item');
+              li.innerHTML = 'Shop - ' + random + " (new)" ; 
+              
+              ol.appendChild(li);
+
+    });
+
+    </script>
+</body>
+</html>
