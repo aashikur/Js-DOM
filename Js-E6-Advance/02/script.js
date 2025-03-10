@@ -33,3 +33,16 @@ console.log("-----------[key,value]-Object.entries(obj)--------------------");
 for (let [key,value] of Object.entries(person)){
     console.log(key, value);
 }
+
+console.log("----------arrow Funciton No Parameter-------------------");
+
+const myFun = () => console.log("THis Arrow FUn");
+
+myFun();
+
+
+console.log("----------Remove Model Property-------------------");
+
+delete person.age;
+
+console.log(person);
