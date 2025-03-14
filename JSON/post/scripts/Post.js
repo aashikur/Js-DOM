@@ -1,3 +1,23 @@
+/*
+
+Post -> data Base e Save hoy
+Delete -> server e Delete hoy
+Get -> server theke niye ase 
+patch -> update hoy server
+put -> update but na paile create kore...
+==========================================
+
+server Language :
+
+200 Ok
+301 Moved permenently
+302 Moved Temporary
+404 Not Found
+500 Internal Server Error
+503 Service Unable
+
+*/
+
 const ID = (n) => document.getElementById(n);
 const b1 = ID('btn1')
 const b2 = ID('btn2')
