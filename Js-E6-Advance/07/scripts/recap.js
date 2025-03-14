@@ -170,11 +170,24 @@
 
 // Pass By Reference Pass By Value 
 
-function sum(a,b,c){
-    const num = [...arguments];
-    console.log(num)
+// function sum(a,b,c){
+//     const num = [...arguments];
+//     console.log(num)
+// }
+
+
+// console.log(sum.length)
+// sum(12,34,54,23,56,88);
+
+// what is api
+
+const person = {
+    name : 'ashik',
+    age : 10,
+    friend: ['kobir','saddam','sabbir'],
+    status: false,
 }
 
-
-console.log(sum.length)
-sum(12,34,54,23,56,88);
+const newPerson = JSON.stringify(person);
+const newParson2 = JSON.parse(newPerson);
+console.log( newParson2);
