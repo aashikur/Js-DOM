@@ -1,6 +1,6 @@
 # Javascript LocalStorage
 
-[![JavaScript Local Host](https://)
+[[JavaScript Local Host](https://)
 
 
 
