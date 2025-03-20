@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>LocalStorage</title>
+</head>
+<body>
+    <h1 class="text-center text-4xl lg:text:6xl font-bold py-20
+               bg-linear-to-r from-green-300 via-blue-500 to-purple-600
+               bg-clip-text text-transparent
+               text-animation
+    ">Local Stroage</h1>
+    <style>
+        .text-animation{
+            animation: show_off 10s  infinite ease ;
+        }
+        @keyframes show_off{
+            0%{
+                background-position:50px 0;
+            } 
+            50%{
+                background-position:1000px 0;
+            } 
+            
+            100%{
+                background-position: 50px 0;
+            } 
+            
+            
+        }
+    </style>
+
+
+    <div class="w-3/12 mx-auto m-3">
+        <button class="btn btn-outline" onclick="HandToStore()">HandToStore</button>
+    </div>
+
+    <div class="w-3/12 mx-auto m-3">
+        <button class="btn btn-outline" onclick="ToLocalStore()">HandToStore</button>
+    </div>
+
+
+
+    <script>
+
+    //     const age = 10;
+    //    // localStorage.setItem('myage', age);
+
+    //     console.log(localStorage.getItem('myage'));
+
+
+
+    //     const HandToStore = (key,value)=>{
+    //         localStorage.setItem(key,value);
+    //     }
+
+    //     HandToStore('HSC','GPA 5');
+    //     HandToStore('SSC','GPA 4.5');
+
+    </script>
+
+
+
+ <script>
+
+    // const ToLocalStore = (key, value)=>{
+
+    //     const person = {
+    //         name: 'Jafor Ali',
+    //         age: 25,
+    //         hobby: 'Teaching'
+    //     }
+
+    //     const convert_person = JSON.stringify(person); // TO Push need to convert to string
+    //     localStorage.setItem('new_obj', convert_person);
+
+    //     // To use need to String to Object again 
+    //     const convert_ToObject_person = JSON.parse(convert_person);
+    //     console.log(convert_ToObject_person); // Obj
+    //     console.log(convert_person) // String
+    // }
+
+
+
+
+    // const getTheObj = localStorage.getItem('new_obj');
+    //       getTheFixedObj = JSON.parse(getTheObj)
+
+    // console.log('test',getTheObj)
+    // console.log('test',getTheFixedObj)
+
+ </script>
+
+
+
+
+</body>
+</html>

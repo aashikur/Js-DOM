@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+     <title>LocalStorage</title>
+</head>
+<body>
+    <h1 class="text-center text-4xl lg:text:6xl font-bold py-20
+               bg-linear-to-r from-green-300 via-blue-500 to-purple-600
+               bg-clip-text text-transparent
+               text-animation
+    ">Add Product List</h1>
+    <style>
+        .text-animation{
+            animation: show_off 10s  infinite ease ;
+        }
+        @keyframes show_off{
+            0%{
+                background-position:50px 0;
+            } 
+            50%{
+                background-position:1000px 0;
+            } 
+            
+            100%{
+                background-position: 50px 0;
+            } 
+            
+            
+        }
+    </style>
+
+    <div class="min-w-50 w-10/12 mx-auto border border-green-300 p-10 rounded">
+        <div class="flex space-x-1">
+            <input id="name" class="rounded p-3" type="text" placeholder="Product">
+
+            <input id="quantity" class="rounded p-3" type="number" placeholder="Quantity">
+           
+            <button id="addTask" class="rounded btn btn-outline btn-success py-6" >
+                Add 
+            </button>
+        </div>
+
+        <div class="pt-10">
+            <ol type="1" id="TaskDisplay">
+                <li class="max-w-lg bg-gray-50 py-2 px-4 rounded flex justify-between">
+                    <div>
+                        <span class="font-bold">1. </span>
+                        <span>Asus</span>
+                    </div>
+                    <span><span class="font-bold">Qnty: </span> 7</span>
+                </li>
+                <li class="max-w-lg bg-gray-0 py-2 px-4 rounded flex justify-between">
+                    <div>
+                        <span class="font-bold">1. </span>
+                        <span>Asus</span>
+                    </div>
+                    <span><span class="font-bold">Qnty: </span> 7</span>
+                </li>
+                
+            </ol>
+        </div>
+
+    </div>
+
+
+    <script>
+        const ID = (id) => document.getElementById(id);
+        const p = ID('name');
+        const q = ID('quantity')
+        const a = ID('addTask');
+        const d = ID('TaskDisplay');
+        let cnt = 1;
+
+
+        a.addEventListener('click', () => {
+            const product = p.value.trim();
+            const quantity = q.value.trim();
+
+            // to Save to LocalStore
+            if (!product || !quantity) {
+            alert("Please enter both product and quantity.");
+            return;
+            }
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+            cart[product] = quantity;
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            p.value = '';
+            q.value = '';
+            d.innerHTML = '';
+
+            addToList(cart);
+            console.log(cart)
+
+            console.log("Cart updated:", localStorage.getItem('cart'));
+        });
+
+
+        const addToList = (cart)=>{
+            let cnt = 1;
+           for(let item in cart){
+   
+                const li = document.createElement('li');
+                li.innerHTML = `
+                <li class="max-w-lg ${cnt%2? 'bg-gray-50': ''} py-2 px-4 rounded flex justify-between">
+                    <div>
+                        <span class="font-bold">${cnt}. </span>
+                        <span>${item}</span>
+                    </div>
+                    <span><span class="font-bold">Qnty: </span><span> ${cart[item]}</span>
+                </li>
+                `;
+
+                d.appendChild(li);
+                cnt++;
+            };
+           
+        }
+
+        d.innerHTML = '';
+        addToList(JSON.parse(localStorage.getItem('cart')));
+</script>
+
+
+
+
+
+</body>
+</html>
