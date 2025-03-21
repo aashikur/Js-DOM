@@ -7,45 +7,58 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
      <title>LocalStorage</title>
 </head>
-<body>
-    <h1 class="text-center text-4xl lg:text:6xl font-bold py-20
-               bg-linear-to-r from-green-300 via-blue-500 to-purple-600
+<body style="height: 100vh;" class="bg-gray-800">
+    <h1 class="w-11/12 mx-auto text-center text-4xl lg:text:6xl font-bold py-20
+               bg-linear-to-r from-green-300 via-blue-500 to-purple-600 
                bg-clip-text text-transparent
                text-animation
-    ">Add Product List</h1>
+    ">Add Your Product & Quantity</h1>
     <style>
         .text-animation{
             animation: show_off 10s  infinite ease ;
-        }
+            background-size: 200%;
+            background-position-y: 50%;
+     
+         }
         @keyframes show_off{
             0%{
-                background-position:50px 0;
+                background-position:0% 50%;
+                background-size: 200%;
+
             } 
             50%{
-                background-position:1000px 0;
+                background-position:100% 00%;
+                background-size: 200%;
+
             } 
             
             100%{
-                background-position: 50px 0;
+                background-position: 0% 50%;
+                background-size: 200%;
+
             } 
             
             
         }
     </style>
 
-    <div class="min-w-50 w-10/12 mx-auto border border-green-300 p-10 rounded">
-        <div class="flex space-x-1">
-            <input id="name" class="rounded p-3" type="text" placeholder="Product">
+    <div class="min-w-50 w-10/12 mx-auto border border-gray-700 p-10 rounded">
+        <div class="flex flex-col lg:flex-row gap-2 text-gray-300">
+            <input autocomplete="off" id="name" class="flex-1 rounded p-3 border-gray-600" type="text" placeholder="Product">
 
-            <input id="quantity" class="rounded p-3" type="number" placeholder="Quantity">
+            <input autocomplete="off"  id="quantity" class="flex-1 rounded p-3 border-gray-600" type="number" placeholder="Quantity">
            
-            <button id="addTask" class="rounded btn btn-outline btn-success py-6" >
+            <button id="addTask" class=" w-30 rounded btn hover:text-gray-200  text-gray-300 bg-gray-950 border-transparent lg:py-6" >
                 Add 
             </button>
+            <button id="ClearTask" onclick="clearTask()" class="w-30 rounded btn hover:text-gray-200  text-gray-300 bg-red-950 border-transparent  lg:py-6" >
+                Clear All 
+            </button>
+            
         </div>
 
         <div class="pt-10">
-            <ol type="1" id="TaskDisplay">
+            <ol type="1" id="TaskDisplay" class="text-bg-300">
                 <li class="max-w-lg bg-gray-50 py-2 px-4 rounded flex justify-between">
                     <div>
                         <span class="font-bold">1. </span>
@@ -55,8 +68,8 @@
                 </li>
                 <li class="max-w-lg bg-gray-0 py-2 px-4 rounded flex justify-between">
                     <div>
-                        <span class="font-bold">1. </span>
-                        <span>Asus</span>
+                        <span class="font-bold">2. </span>
+                        <span>Mafus</span>
                     </div>
                     <span><span class="font-bold">Qnty: </span> 7</span>
                 </li>
@@ -108,7 +121,7 @@
    
                 const li = document.createElement('li');
                 li.innerHTML = `
-                <li class="max-w-lg ${cnt%2? 'bg-gray-50': ''} py-2 px-4 rounded flex justify-between">
+                <li class="${cnt%2? 'bg-gray-900': 'bg-gray-700'} text-gray-400 py-2 px-4 rounded flex justify-between">
                     <div>
                         <span class="font-bold">${cnt}. </span>
                         <span>${item}</span>
@@ -125,6 +138,12 @@
 
         d.innerHTML = '';
         addToList(JSON.parse(localStorage.getItem('cart')));
+
+        // Clear Task 
+        const clearTask = ()=>{
+            localStorage.removeItem('cart');
+            d.innerHTML = '';
+        }
 </script>
 
 
